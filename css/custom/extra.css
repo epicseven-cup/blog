@@ -1,0 +1,55 @@
+/*overall page*/
+
+#page{
+    background: rgb(218,179,100);
+    background: linear-gradient(90deg, rgba(218,179,100,1) 30%, rgba(214,190,135,1) 51%, rgba(239,204,136,1) 72%);
+}
+
+
+
+
+/*
+for sidebar
+*/
+.sidebar{
+    background-size: cover;
+}
+
+
+
+/*
+for each post
+*/
+
+
+/*post-preveiw*/
+.post-card{
+    background-size: cover;
+    background: transparent url("../../images/postH.png") left center;
+}
+
+/*inside the post*/
+
+#post > article{
+    /*background: rgb(176,87,45);*/
+    /*background: radial-gradient(circle, rgba(176,87,45,1) 0%, rgba(252,98,65,1) 20%, rgba(219,38,12,1) 42%, rgba(239,204,136,1) 86%);*/
+    background: #f7e2b3;
+
+}
+
+#comment{
+    background: blanchedalmond;
+
+}
+
+/*footer*/
+
+#footer{
+    font-weight: bold;
+    color: darkslategrey;
+}
+
+#footer a{
+    color: whitesmoke;
+    font-weight: bolder;
+}
