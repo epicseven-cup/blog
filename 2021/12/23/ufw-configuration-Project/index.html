@@ -6,17 +6,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="HandheldFriendly" content="True">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
-    <meta name="description" content="The following post contains things I learned from UFW documentation by Contributors to the Ubuntu documentation wiki that is licensed under Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0) with">
+    <meta name="description" content="The following post contains things I learned and based from UFW documentation by Contributors to the Ubuntu documentation wiki that is licensed under Attribution-ShareAlike 3.0 Unported (CC BY-SA">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ufw configuration Project">
 <meta property="og:url" content="https://epicseven-cup.github.io/blog/2021/12/23/ufw-configuration-Project/index.html">
 <meta property="og:site_name" content="兔的熬夜日记">
-<meta property="og:description" content="The following post contains things I learned from UFW documentation by Contributors to the Ubuntu documentation wiki that is licensed under Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0) with">
+<meta property="og:description" content="The following post contains things I learned and based from UFW documentation by Contributors to the Ubuntu documentation wiki that is licensed under Attribution-ShareAlike 3.0 Unported (CC BY-SA">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-12-24T03:30:16.000Z">
-<meta property="article:modified_time" content="2021-12-24T21:17:53.585Z">
+<meta property="article:modified_time" content="2021-12-25T01:39:05.082Z">
 <meta property="article:author" content="兔">
-<meta property="article:tag" content="License">
+<meta property="article:tag" content="EN">
+<meta property="article:tag" content="Firewall">
+<meta property="article:tag" content="Pop!_OS">
 <meta name="twitter:card" content="summary">
     
     
@@ -106,7 +108,7 @@
 
     </div>
     <div id="toc">
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Setup-UFW-Day-One-December-23-2021"><span class="toc-number">1.</span> <span class="toc-text">Setup UFW [ Day One! (December 23, 2021) ]</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Create-Firewall-rules-Day-Two-December-24-2021"><span class="toc-number">2.</span> <span class="toc-text">Create Firewall rules [ Day Two! (December 24, 2021) ]</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#TO-BE-CONTUINE"><span class="toc-number"></span> <span class="toc-text">TO BE CONTUINE</span></a>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Setup-UFW-Day-One-December-23-2021"><span class="toc-number">1.</span> <span class="toc-text">Setup UFW [ Day One! (December 23, 2021) ]</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Create-Firewall-rules-Day-Two-December-24-2021"><span class="toc-number">2.</span> <span class="toc-text">Create Firewall rules [ Day Two! (December 24, 2021) ]</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#TO-BE-CONTUINE%E2%80%A6"><span class="toc-number"></span> <span class="toc-text">TO BE CONTUINE…</span></a>
     </div>
   </span>
 </div>
@@ -132,7 +134,7 @@
       
         <time datetime="2021-12-24T03:30:16.000Z" itemprop="datePublished">2021-12-23</time>
         
-        (Updated: <time datetime="2021-12-24T21:17:53.585Z" itemprop="dateModified">2021-12-24</time>)
+        (Updated: <time datetime="2021-12-25T01:39:05.082Z" itemprop="dateModified">2021-12-24</time>)
         
       
     </div>
@@ -143,7 +145,7 @@
       
     <div class="article-tag">
         <i class="fas fa-tag"></i>
-        <a class="tag-link-link" href="/blog/tags/License/" rel="tag">License</a>
+        <a class="tag-link-link" href="/blog/tags/EN/" rel="tag">EN</a>, <a class="tag-link-link" href="/blog/tags/Firewall/" rel="tag">Firewall</a>, <a class="tag-link-link" href="/blog/tags/Pop-OS/" rel="tag">Pop!_OS</a>
     </div>
 
 
@@ -152,8 +154,8 @@
   
 
   <div class="content" itemprop="articleBody">
-    <div style="border-style:solid; text-align: center;">
-   The following post contains things I learned from <a href = "https://help.ubuntu.com/community/UFW" target ="_blank">UFW documentation</a> by Contributors to the Ubuntu documentation wiki that is licensed under <a href ="https://creativecommons.org/licenses/by-sa/3.0/" target = "_blank">Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)</a> <strong>with my own modification.</strong>
+    <div style="border-style:solid; text-align: center; background-color:#54ab6c;">
+   The following post contains things I learned and based from <a href = "https://help.ubuntu.com/community/UFW" target ="_blank">UFW documentation</a> by Contributors to the Ubuntu documentation wiki that is licensed under <a href ="https://creativecommons.org/licenses/by-sa/3.0/" target = "_blank">Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)</a> <strong>with my own modification.</strong>
 </div>
 
 <p><strong>This post will be licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-sa/3.0/">Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)</a> following the requirement for ShareAlike</strong></p>
@@ -183,11 +185,21 @@
 <p>You can also add verbose option to the command to see the firewall rules that were applied.</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo ufw status verbose</span><br></pre></td></tr></table></figure>
 
+<p>Adding basic rules:</p>
 <p>Allowing or Deny on specific ports </p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo ufw [allow/deny] &lt;port number&gt;/&lt;protocol&gt; <span class="comment"># protocol is optional</span></span><br></pre></td></tr></table></figure>
+<p>Allowing or Deny specific IP address</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo ufw [allow/deny] from &lt;IP&gt;</span><br></pre></td></tr></table></figure>
+
+<p>This is used when you want to ban a specific ip from sending request to your sever or coming out from your network</p>
+<p>Be more specific with rules</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo ufw [allow/deny] from &lt;Source IP&gt; to &lt;Destination IP&gt; port &lt;port number&gt; proto &lt;protocol&gt;</span><br></pre></td></tr></table></figure>
 
 
-<h1 id="TO-BE-CONTUINE"><a href="#TO-BE-CONTUINE" class="headerlink" title="TO BE CONTUINE"></a>TO BE CONTUINE</h1>
+
+<h1 id="TO-BE-CONTUINE…"><a href="#TO-BE-CONTUINE…" class="headerlink" title="TO BE CONTUINE…"></a>TO BE CONTUINE…</h1><div style="border-style:solid; text-align: center; background-color: #a98e56;" >
+This is a learning diary for me to take notes on the things I learned from <a href = "https://help.ubuntu.com/community/UFW" target ="_blank">UFW documentation</a>. I try my best to follow all the guidelines needed when including materials in my post such as following the license given to the work and correctly citing them to the best of my abilities. However I'm still new to this and if anything here you think is not right or you think I can improve on please comment on the github repo issue or email me at cheetoskorone@gmail.com
+</div>
   </div>
 
 </article>
@@ -213,7 +225,7 @@
     </div>
 
     <div id="toc-footer" style="display: none">
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Setup-UFW-Day-One-December-23-2021"><span class="toc-number">1.</span> <span class="toc-text">Setup UFW [ Day One! (December 23, 2021) ]</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Create-Firewall-rules-Day-Two-December-24-2021"><span class="toc-number">2.</span> <span class="toc-text">Create Firewall rules [ Day Two! (December 24, 2021) ]</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#TO-BE-CONTUINE"><span class="toc-number"></span> <span class="toc-text">TO BE CONTUINE</span></a>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Setup-UFW-Day-One-December-23-2021"><span class="toc-number">1.</span> <span class="toc-text">Setup UFW [ Day One! (December 23, 2021) ]</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Create-Firewall-rules-Day-Two-December-24-2021"><span class="toc-number">2.</span> <span class="toc-text">Create Firewall rules [ Day Two! (December 24, 2021) ]</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#TO-BE-CONTUINE%E2%80%A6"><span class="toc-number"></span> <span class="toc-text">TO BE CONTUINE…</span></a>
     </div>
 
     <!-- disable share for now -->
