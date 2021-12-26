@@ -14,7 +14,7 @@
 <meta property="og:description" content="The following post contains things I learned and based from UFW documentation by Contributors to the Ubuntu documentation wiki that is licensed under Attribution-ShareAlike 3.0 Unported (CC BY-SA">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-12-24T03:30:16.000Z">
-<meta property="article:modified_time" content="2021-12-25T16:36:56.926Z">
+<meta property="article:modified_time" content="2021-12-26T17:12:26.173Z">
 <meta property="article:author" content="兔">
 <meta property="article:tag" content="EN">
 <meta property="article:tag" content="Firewall">
@@ -108,7 +108,7 @@
 
     </div>
     <div id="toc">
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Setup-UFW-Day-One-December-23-2021"><span class="toc-number">1.</span> <span class="toc-text">Setup UFW [ Day One! (December 23, 2021) ]</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Create-Firewall-rules-Day-Two-December-24-2021"><span class="toc-number">2.</span> <span class="toc-text">Create Firewall rules [ Day Two! (December 24, 2021) ]</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Break-Day-Three-December-25-2021"><span class="toc-number">3.</span> <span class="toc-text">Break [ Day Three! (December 25, 2021) ]</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#TO-BE-CONTUINE%E2%80%A6"><span class="toc-number"></span> <span class="toc-text">TO BE CONTUINE…</span></a>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Setup-UFW-Day-One-December-23-2021"><span class="toc-number">1.</span> <span class="toc-text">Setup UFW [ Day One! (December 23, 2021) ]</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Create-Firewall-rules-Day-Two-December-24-2021"><span class="toc-number">2.</span> <span class="toc-text">Create Firewall rules [ Day Two! (December 24, 2021) ]</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Break-Day-Three-December-25-2021"><span class="toc-number">3.</span> <span class="toc-text">Break [ Day Three! (December 25, 2021) ]</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Firewall-logs-Day-Four-December-26-2021"><span class="toc-number">4.</span> <span class="toc-text">Firewall logs [ Day Four! (December 26, 2021) ]</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#TO-BE-CONTUINE%E2%80%A6"><span class="toc-number"></span> <span class="toc-text">TO BE CONTUINE…</span></a>
     </div>
   </span>
 </div>
@@ -134,7 +134,7 @@
       
         <time datetime="2021-12-24T03:30:16.000Z" itemprop="datePublished">2021-12-23</time>
         
-        (Updated: <time datetime="2021-12-25T16:36:56.926Z" itemprop="dateModified">2021-12-25</time>)
+        (Updated: <time datetime="2021-12-26T17:12:26.173Z" itemprop="dateModified">2021-12-26</time>)
         
       
     </div>
@@ -198,6 +198,14 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo ufw [allow/deny] from &lt;Source IP&gt; to &lt;Destination IP&gt; port &lt;port number&gt; proto &lt;protocol&gt;</span><br></pre></td></tr></table></figure>
 
 <h2 id="Break-Day-Three-December-25-2021"><a href="#Break-Day-Three-December-25-2021" class="headerlink" title="Break [ Day Three! (December 25, 2021) ]"></a>Break [ Day Three! (December 25, 2021) ]</h2><p>Merry christmas! I’m going to take a break for today and enjoy christmas.</p>
+<h2 id="Firewall-logs-Day-Four-December-26-2021"><a href="#Firewall-logs-Day-Four-December-26-2021" class="headerlink" title="Firewall logs [ Day Four! (December 26, 2021) ]"></a>Firewall logs [ Day Four! (December 26, 2021) ]</h2><p>The firewall logs lives in /var/log like most logs</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /var/<span class="built_in">log</span></span><br></pre></td></tr></table></figure>
+
+<p>Open the log file using editor of your choice </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nano ufw.log</span><br></pre></td></tr></table></figure>
+
+
+
 <h1 id="TO-BE-CONTUINE…"><a href="#TO-BE-CONTUINE…" class="headerlink" title="TO BE CONTUINE…"></a>TO BE CONTUINE…</h1><div style="border-style:solid; text-align: center; background-color: #a98e56;" >
 This is a learning diary for me to take notes on the things I learned from <a href = "https://help.ubuntu.com/community/UFW" target ="_blank">UFW documentation</a>. I try my best to follow all the guidelines needed when including materials in my post such as following the license given to the work and correctly citing them to the best of my abilities. However I'm still new to this and if anything here you think is not right or you think I can improve on please comment on the github repo issue or email me at cheetoskorone@gmail.com
 </div>
@@ -226,7 +234,7 @@ This is a learning diary for me to take notes on the things I learned from <a hr
     </div>
 
     <div id="toc-footer" style="display: none">
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Setup-UFW-Day-One-December-23-2021"><span class="toc-number">1.</span> <span class="toc-text">Setup UFW [ Day One! (December 23, 2021) ]</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Create-Firewall-rules-Day-Two-December-24-2021"><span class="toc-number">2.</span> <span class="toc-text">Create Firewall rules [ Day Two! (December 24, 2021) ]</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Break-Day-Three-December-25-2021"><span class="toc-number">3.</span> <span class="toc-text">Break [ Day Three! (December 25, 2021) ]</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#TO-BE-CONTUINE%E2%80%A6"><span class="toc-number"></span> <span class="toc-text">TO BE CONTUINE…</span></a>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Setup-UFW-Day-One-December-23-2021"><span class="toc-number">1.</span> <span class="toc-text">Setup UFW [ Day One! (December 23, 2021) ]</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Create-Firewall-rules-Day-Two-December-24-2021"><span class="toc-number">2.</span> <span class="toc-text">Create Firewall rules [ Day Two! (December 24, 2021) ]</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Break-Day-Three-December-25-2021"><span class="toc-number">3.</span> <span class="toc-text">Break [ Day Three! (December 25, 2021) ]</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Firewall-logs-Day-Four-December-26-2021"><span class="toc-number">4.</span> <span class="toc-text">Firewall logs [ Day Four! (December 26, 2021) ]</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#TO-BE-CONTUINE%E2%80%A6"><span class="toc-number"></span> <span class="toc-text">TO BE CONTUINE…</span></a>
     </div>
 
     <!-- disable share for now -->
